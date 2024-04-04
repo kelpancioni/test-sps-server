@@ -19,3 +19,8 @@
 - Não deve ser possível cadastrar o e-mail já cadastrado
 - Deve ser possível remover usuário
 - Deve ser possível alterar os dados do usuário
+
+  ## Questões
+
+  - Qual outra arquitetura de software poderia ser usada para esse projeto?
+  - Qual banco de dados para armazenar os usuários?
