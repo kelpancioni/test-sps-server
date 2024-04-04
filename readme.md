@@ -20,7 +20,7 @@
 - Deve ser possível remover usuário
 - Deve ser possível alterar os dados do usuário
 
-  ## Questões
+## Questões
 
-  - Qual outra arquitetura de software poderia ser usada para esse projeto?
-  - Qual banco de dados para armazenar os usuários?
+- Qual outra arquitetura de software poderia ser usada para esse projeto?
+- Qual banco de dados para armazenar os usuários?
