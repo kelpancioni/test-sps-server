@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const authConfig = require('../config/auth');
+const userRepository = require('../repositories/userRepository');
 
 module.exports = (req, res, next) => {
   const authHeader = req.headers.authorization;
@@ -27,6 +28,10 @@ module.exports = (req, res, next) => {
 
     req.userId = decoded.id;
     req.userEmail = decoded.email;
+
+    // Buscar o tipo/role do usuário no repositório
+    const user = userRepository.findById(decoded.id);
+    req.userType = user ? user.type : 'user';
 
     return next();
   });
