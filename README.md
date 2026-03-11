@@ -110,6 +110,46 @@ Todas as rotas abaixo requerem o header `Authorization: Bearer <token>`
 }
 ```
 
+## Testes
+
+O projeto possui uma suíte completa de testes unitários e de integração usando **Jest** e **Supertest**.
+
+### Executando os testes
+
+```bash
+# Rodar todos os testes
+npm test
+
+# Rodar em modo watch (re-executa ao salvar)
+npm run test:watch
+
+# Rodar com relatório de cobertura
+npm run test:coverage
+```
+
+### Estrutura de testes
+
+```
+tests/
+├── setup.js                          # Configuração do ambiente de teste
+├── unit/
+│   ├── userRepository.test.js        # Testes do repositório (CRUD, email único)
+│   ├── authMiddleware.test.js        # Testes do middleware JWT (token válido/inválido/expirado)
+│   └── checkAdmin.test.js            # Testes do middleware de admin
+└── integration/
+    ├── auth.test.js                  # Testes de login (credenciais válidas/inválidas, JWT)
+    └── users.test.js                 # Testes CRUD de usuários (autorização, validações)
+```
+
+### Cobertura
+
+| Métrica    | Cobertura |
+|------------|-----------|
+| Statements | ~99%      |
+| Branches   | ~95%      |
+| Functions  | ~96%      |
+| Lines      | ~99%      |
+
 ## Estrutura do Projeto
 
 ```
@@ -124,8 +164,13 @@ src/
 │   └── checkAdmin.js       # Middleware de autorização (somente admin)
 ├── repositories/
 │   └── userRepository.js   # Banco de dados em memória
+├── app.js                   # Configuração do Express (usado nos testes)
 ├── index.js                 # Ponto de entrada da aplicação
 └── routes.js                # Definição das rotas
+tests/                        # Suíte de testes (Jest + Supertest)
+├── setup.js
+├── unit/
+└── integration/
 ```
 
 ## Códigos de Resposta

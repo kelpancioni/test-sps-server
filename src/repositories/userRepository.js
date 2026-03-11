@@ -72,6 +72,20 @@ const userRepository = {
 
   emailExists(email, excludeId = null) {
     return users.some(u => u.email === email && u.id !== parseInt(excludeId));
+  },
+
+  // Método utilitário para resetar o banco em testes
+  _reset() {
+    users = [
+      {
+        id: 1,
+        name: 'Admin',
+        email: 'admin@admin.com',
+        type: 'admin',
+        password: 'admin123'
+      }
+    ];
+    nextId = 2;
   }
 };
 
